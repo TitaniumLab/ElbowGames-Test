@@ -6,7 +6,7 @@
             "id": "c53fb59f-31de-4515-8cb5-ff009b2d44e1",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Move",
                     "type": "Value",
                     "id": "5deb000e-6baa-4c8d-a436-750fd97e1c8a",
                     "expectedControlType": "Vector2",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

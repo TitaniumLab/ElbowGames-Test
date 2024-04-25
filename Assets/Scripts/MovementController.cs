@@ -1,23 +1,25 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using ElbowGames.Input;
 using UnityEngine;
 using Zenject;
 
-public class MovementController : MonoBehaviour
+namespace ElbowGames
 {
-    [SerializeField] private Rigidbody2D _player;
-    [SerializeField] private float _forceMultiplier = 1;
-    private IHorizontalInput _horizontalInput;
-
-    [Inject]
-    private void Construct(IHorizontalInput horizontalInput)
+    public class MovementController : MonoBehaviour
     {
-        _horizontalInput = horizontalInput;
-        _horizontalInput.OnHorizontalInput += Move;
-    }
+        [SerializeField] private Rigidbody2D _player;
+        [SerializeField] private float _horizForceMulti = 1;
+        private IHorizontalInput _horizontalInput;
 
-    private void Move(float value)
-    {
-        _player.AddForce(Vector2.right * value * Time.deltaTime * _forceMultiplier);
+        [Inject]
+        private void Construct(IHorizontalInput horizontalInput)
+        {
+            _horizontalInput = horizontalInput;
+            _horizontalInput.OnHorizontalInput += HorizontalMove;
+        }
+
+        private void HorizontalMove(float value)
+        {
+            _player.AddForce(Vector2.right * value * Time.deltaTime * _horizForceMulti);
+        }
     }
 }

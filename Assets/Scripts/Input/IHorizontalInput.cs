@@ -1,6 +1,10 @@
 using System;
 
-public interface IHorizontalInput 
+namespace ElbowGames.Input
 {
-    public event Action<float> OnHorizontalInput;
+    public interface IHorizontalInput
+    {
+        public event Action<float> OnHorizontalInput;
+    }
 }
+

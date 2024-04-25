@@ -1,6 +1,8 @@
 using System;
-
-public interface IVerticalInput
+namespace ElbowGames.Input
 {
-    public event Action<float> OnVerticalInput;
+    public interface IVerticalInput
+    {
+        public event Action<float> OnVerticalInput;
+    }
 }
